@@ -75,4 +75,5 @@ Option 2: "all" returns all the schools by email:
 ℹ️ **Further info**
 
 **SQLite Database.** The database contains information from the BiciMAD stations including their location (i.e.: latitude / longitude). You may find .db file in the data folder.
+
 **API REST.** We will use the API REST from the Portal de datos abiertos del Ayuntamiento de Madrid, where you can find the Catálogo de datos with more than 70 datasets. The API endpoint is https://datos.madrid.es/egob.
