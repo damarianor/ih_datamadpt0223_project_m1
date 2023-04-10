@@ -2,118 +2,62 @@
 
 # __ih_datamadpt0223_project_m1__
 
-Ironhack Madrid - Data Analytics Part Time - Feb 2023 - Project Module 1
+Madrid Sport Places
 
-## **Data:**
-
-There are 2 main datasources:
-
-- **SQLite Database.** The database contains information from the BiciMAD stations including their location (i.e.: latitude / longitude). You may find `.db` file in the __data__ folder.
-
-- **API REST.** We will use the API REST from the [Portal de datos abiertos del Ayuntamiento de Madrid](https://datos.madrid.es/nuevoMadrid/swagger-ui-master-2.2.10/dist/index.html?url=/egobfiles/api.datos.madrid.es.json#/), where you can find the __Catálogo de datos__ with more than 70 datasets. The API endpoint is `https://datos.madrid.es/egob`. 
-
-> __IMPORTANT:__ These are the body corresponding to every dataset:
-
-- Mujib: `/catalogo/209434-0-templos-otros.json`
-
-- Magno: `/catalogo/300356-0-monumentos-ciudad-madrid.json`
-
-- Bruna: `/catalogo/212769-0-atencion-medica.json`
-
-- Daniel: `/catalogo/212808-0-espacio-deporte.json`
-
-- Cristhian: `/catalogo/209426-0-templos-catolicas.json`
-
-- Diego: `/catalogo/208844-0-monumentos-edificios.json`
-
-- Lourdes: `/catalogo/201000-0-embajadas-consulados.json`
-
-- Juan: `/catalogo/200761-0-parques-jardines.json`
-
-- Gonzalo: `/catalogo/200215-0-instalaciones-deportivas.json`
-
-- Margarita: `/catalogo/202311-0-colegios-publicos.json`
-
-- Herminia: `/catalogo/200304-0-centros-culturales.json`
+This project is for the Module 1 of Ironhack Data Analytics Bootcamp. 
+This aspp was created for finding the closest bicimad station to a set of sport places of interest. 
 
 
+To enjoy this app, you have two options:
 
----
+For the school you choose, you can filter it by the closest bicimad station in meters.
 
-## **Main Challenge:**
+For all the schools, you'll recieve by email all the schools with their closest bicimad station in meters.
 
-You must create a Python App (**Data Pipeline**) that allow their potential users to find the nearest BiciMAD station to a set of places of interest using the methods included in the module `geo_calculations.py`. The output table should look similar to:
+Image
 
-| Place of interest | Type of place (*) | Place address | BiciMAD station | Station location |
-|---------|----------|-------|------------|----------|
-| Auditorio Carmen Laforet (Ciudad Lineal)   | Centros Culturales | Calle Jazmin, 46 | Legazpi | Calle Bolívar, 3 |
-| Centro Comunitario Casino de la Reina | Centros municipales de enseñanzas artísticas | Calle Casino, 3 | Chamartin | Calle Rodríguez Jaén, 40 |
-| ...     | ...            | ...        | ...      | ...        |
-> __(*)__ There is a list of datasets each one with different places. A specific dataset will be assigned to each student. 
+💻 Technology stack
+SQL
+Pandas
+Python
+Jupyter
+DBeaver
+💥 Core technical concepts and inspiration
+The app offers you an alternative of transport, clean and healthy for moving between the school of your children and your home, work or wherever you want just introducing the name of the school. And you could use it as a finder of public schools choosing the option of all.
 
+🔧 Configuration
+import sqlalchemy from sqlalchemy import create_engine from sqlalchemy import inspect import pandas as pd import requests import re import json import math import numpy as pn import functools as ft from shapely.geometry import Point import geopandas as gpd import argparse import smtplib import imghdr from email.message import EmailMessage import os from dotenv import load_dotenv
 
-**Your project must meet the following requirements:**
+🙈 Usage
+Option 1: "one" the input should be the name of the school, and returns all the next information:
 
-- It must be contained in a GitHub repository which includes a README file that explains the aim and content of your code. You may follow the structure suggested [here](https://github.com/potacho/data-project-template).
+![Screenshot](Screenshot 2022-07-21 at 17.11.27.png)
 
-- It must create, at least, a `.csv` file including the requested table (i.e. Main Challenge). Alternatively, you may create an image, pdf, plot or any other output format that you may find convenient. You may also send your output by e-mail, upload it to a cloud repository, etc. 
+Option 2: "all" returns all the schools by email:
 
-- It must provide, at least, two options for the final user to select when executing using `argparse`: **(1)** To get the table for every 'Place of interest' included in the dataset (or a set of them), **(2)** To get the table for a specific 'Place of interest' imputed by the user.
+![Screenshot](Screenshot 2022-07-21 at 17.08.51.png)
 
-**Additionally:**
-
-- You must prepare a 4 minutes presentation (ppt, canva, etc.) to explain your project (Instructors will provide further details about the content of the presentation).
-
-- The last slide of your presentation must include your candidate for the **'Ironhack Data Code Beauty Pageant'**. 
-
-
----
-
-### **Bonus 1:**
-
-You may include in your table the availability of bikes in each station.
-
----
-
-### **Bonus 2:**
-
-You may improve the usability of your app by using [FuzzyWuzzy](https://pypi.org/project/fuzzywuzzy/).
-
----
-
-### **Bonus 3:**
-
-Feel free to enrich your output data with any data you may find relevant (e.g.: wiki info for every place of interest) or connect to the BiciMAD API and update bikes availability realtime or find a better way to calculate distances...there's no limit!!!
-
---- 
-
-## **Project Main Stack**
-
-- [DBeaver](https://dbeaver.io/)
-
-- [SQL Alchemy](https://docs.sqlalchemy.org/en/13/intro.html)
-
-- [Requests](https://requests.readthedocs.io/)
-
-- [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
-
-- Module `geo_calculations.py`
-
-- [Argparse](https://docs.python.org/3.7/library/argparse.html)
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
- 
-
+📁 Folder structure
+└── project_ih_m1
+    ├── trash
+    |   ├── bicimad_coles.ipynb
+    │   └── bicimad_colesyenfant-final.ipynb
+    |   ├── bicimad_colesyenfant.ipynb
+    │   └── geo_calculations.ipynb
+    |   ├── bicimad_coles_escuelas.csv
+    │   └── bicimad_coleyescuelas.py
+    ├── mailmodule
+    |   ├── mailmodule.ipnynb
+    │   └── mail.py
+    │
+    ├── dev_notebook_.ipynb
+    └── bicimad_coles_escuelas.csv
+    ├── .gitignore
+    └── img
+    ├── .env
+    ├── main.py
+    └── README.md
+ℹ️ Further info
+[API_colegios públicos Madrid] https://datos.madrid.es/egob (/catalogo/202311-0-colegios-publicos.json)
+[API escuelas infantiles Madrid] https://datos.madrid.es/egob (/catalogo/202318-0-escuelas-infantiles.json)
+MySQL Online Database. The database contains information from the BiciMAD stations including their location (i.e.: latitude / longitude). In order to access the database you may need the following credentials: Server: SERVER_IP Database: BiciMAD
