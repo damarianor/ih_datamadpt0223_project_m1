@@ -12,12 +12,6 @@ import geopandas as gpd
 import argparse
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-a', '--all', help= " '-a all' (Get the closest bike station for all sport places in Madrid)\n '-a select' (Select a set of bike stations from Madrid's database) ")
-    parser.add_argument('-c', '--singleSportPlace', help= " Get the closest bike station to the sport place\n Example: '-c Campo de Golf del Centro Nacional de Golf")
-    args = parser.parse_args()
-    variables = vars(args)
-    
     conn = duckdb.connect('../data/bicimad.db')
     database = conn.execute('SELECT * from bicimad_stations').fetch_df()
     bicimad = database.copy()
