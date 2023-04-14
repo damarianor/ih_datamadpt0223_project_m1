@@ -11,10 +11,8 @@ This aspp was created for finding the closest bicimad station to a set of sport 
 
 There are two options to use and enjoy this app:
 
-1) You can filter in meters by the closest BiciMAD station
-2) You can also receive an email with the Sport Places and their closest BiciMAD stations.
-
-- INCLUDE IMAGE
+1) You can get the closest bike station for all sport places in Madrid
+2) You can also the closest bike station for an specific sport place. 
 
 💻 **Technology used:**
 
@@ -44,32 +42,32 @@ There are two options to use and enjoy this app:
 
 ✔ **Examples**
 
-Option 1: "one" the input should be the name of the school, and returns all the next information:
-
-
-Option 2: "all" returns all the schools by email:
-
+Option 1: The input should be the name of each sport place and the closest BiciMAD station.
+Option 2: The input should be the specific sport place and its closest BiciMAD station.
 
 📁 **Folder structure**
 
-└── project_ih_m1
-    ├── trash
-    |   ├── bicimad_coles.ipynb
-    │   └── bicimad_colesyenfant-final.ipynb
-    |   ├── bicimad_colesyenfant.ipynb
+└── ih_datamadpt0223_project_m1
+    ├── data
+    |   ├── bicimad_stations.csv
+    │   └── bicimad.db
+    |   ├── espacio-deporte.csv
     │   └── geo_calculations.ipynb
     |   ├── bicimad_coles_escuelas.csv
     │   └── bicimad_coleyescuelas.py
-    ├── mailmodule
-    |   ├── mailmodule.ipnynb
-    │   └── mail.py
+    ├── modules
+    |   ├── geo_calculations.py   
     │
-    ├── dev_notebook_.ipynb
-    └── bicimad_coles_escuelas.csv
-    ├── .gitignore
-    └── img
-    ├── .env
-    ├── main.py
+    ├── notebooks
+    │   ├── dev_notebook_.ipynb
+    │   ├── bicimad.db
+    |   ├── main.py
+    |   ├── notebook.ipynb
+    ├── p_acquisition
+    |   ├── m_acquisition.ipynb
+    │   ├── m_acquisition.py
+    |   ├── main.py
+    |
     └── README.md
     
 ℹ️ **Further info**
