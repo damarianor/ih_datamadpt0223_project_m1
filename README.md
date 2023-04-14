@@ -43,6 +43,7 @@ There are two options to use and enjoy this app:
 ✔ **Examples**
 
 Option 1: The input should be the name of each sport place and the closest BiciMAD station.
+
 Option 2: The input should be the specific sport place and its closest BiciMAD station.
 
 📁 **Folder structure**
