@@ -47,6 +47,7 @@ Option 2: The input should be the specific sport place and its closest BiciMAD s
 
 📁 **Folder structure**
 
+
 └── ih_datamadpt0223_project_m1
     ├── data
     |   ├── bicimad_stations.csv
