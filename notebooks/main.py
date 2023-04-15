@@ -50,11 +50,14 @@ grouped = tabla_final_sorted.groupby('Place of interest')
 resultado_final = grouped.head(1)
 csv = resultado_final.to_csv('./main_challenge.csv', index=False)
 
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-a', '--all', action='store_true', help="Get the closest bike station for all sport places in Madrid")
 parser.add_argument('-p', '--place', help="Select a specific sport place to find the closest bike station")
 
 args = parser.parse_args()
+
+final = pd.read_csv('./main_challenge.csv')
 
 if args.all:
     for index, row in espacios_final.iterrows():
@@ -70,4 +73,6 @@ elif args.place:
     distance = tabla_final_sorted.loc[tabla_final_sorted['Place of interest'] == place].iloc[0]['Distance']
     print(f"The closest BiciMAD station to {place} is {closest_station}, at a distance of {round(distance,2)} meters.")
 else:
-    print(f'ERROR! No sé que está mal')
+    print(f'ERROR!')
+
+print('Muy bien hecho!')
